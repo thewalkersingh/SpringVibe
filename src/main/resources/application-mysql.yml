@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: springvibe
+
+  # ==========================
+  # Database Configuration (MySQL)
+  # ==========================
+  datasource:
+    url: jdbc:mysql://localhost:3306/springvibe?createDatabaseIfNotExist=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: admin
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    generate-ddl: true
+
+# ==========================
+# Logging Configuration
+# ==========================
+logging:
+  level:
+    org.springframework.jdbc: DEBUG
