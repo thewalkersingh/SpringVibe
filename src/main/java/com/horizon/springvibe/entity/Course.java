@@ -2,22 +2,21 @@ package com.horizon.springvibe.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @Entity
 @AllArgsConstructor
-@Builder
-public class Course {
+@SuperBuilder
+public class Course extends BaseEntity {
 	
-	@Id
-	@GeneratedValue
-	private Integer id;
 	private String name;
 	private String description;
 	

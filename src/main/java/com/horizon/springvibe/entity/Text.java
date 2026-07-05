@@ -1,6 +1,5 @@
 package com.horizon.springvibe.entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,17 +10,12 @@ import lombok.experimental.SuperBuilder;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
-@Entity
 @AllArgsConstructor
 @SuperBuilder
-public class Author extends BaseEntity {
+@Entity
+//@DiscriminatorValue("Text") // --> only need for SINGLE_TABLE strategy
+public class Text extends Resource {
 	
-	@Column(name = "f_name ", length = 50)
-	private String firstName;
-	private String lastName;
-	
-	@Column(unique = true, nullable = false)
-	private String email;
-	private int age;
+	private String content;
 	
 }

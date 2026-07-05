@@ -2,15 +2,17 @@ package com.horizon.springvibe.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
 @NoArgsConstructor
-@Entity
 @AllArgsConstructor
-@Builder
+@SuperBuilder
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+//@DiscriminatorColumn(name = "resource_type") // --> only need for SINGLE_TABLE strategy
 public class Resource {
 	
 	@Id
@@ -19,7 +21,9 @@ public class Resource {
 	private String name;
 	private int size;
 	private String url;
+	
 	@OneToOne
 	@JoinColumn(name = "lecture_id")
 	private Lecture lecture;
+	
 }

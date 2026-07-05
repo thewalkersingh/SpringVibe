@@ -26,3 +26,16 @@ spring:
 logging:
   level:
     org.springframework.jdbc: DEBUG
+
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method       # sorts by GET/POST/PATCH/DELETE
+    tags-sorter: alpha              # sorts controllers alphabetically
+    try-it-out-enabled: true        # enables Try it out by default
+    #or alpha->alphabetically, method-> method wise
+  # Explicitly permit these paths — important once security filter is active
+  paths-to-match: /api/**
