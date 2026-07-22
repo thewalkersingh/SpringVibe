@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/author")
+@RequestMapping("/author")
 @RequiredArgsConstructor
 @Tag(name = "Author", description = "Author management endpoints")
 public class AuthorController {
@@ -21,16 +21,19 @@ public class AuthorController {
 	
 	@GetMapping
 	public List<Author> findAll() {
+		
 		return authorService.findAll();
 	}
 	
 	@GetMapping("/firstName")
 	public List<Author> findFirstName(String firstName) {
+		
 		return authorService.findAllByFirstName(firstName);
 	}
 	
 	@GetMapping("/{age}")
 	public int countByAgeGreaterThan(@PathVariable int age) {
+		
 		return authorService.countByAgeGreaterThan(age);
 	}
 	

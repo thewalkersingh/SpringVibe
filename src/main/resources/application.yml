@@ -27,6 +27,12 @@ spring:
       # Disable Spring's schema.sql initialization (we'll use Hibernate's import.sql)
       mode: never # or never
 
+  # security config
+  security:
+    user:
+      name: root
+      password: admin
+
 logging:
   level:
     org-springframework-jdbc: DEBUG

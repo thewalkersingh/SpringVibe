@@ -19,16 +19,17 @@ public class SwaggerConfig {
 	
 	@Bean
 	public OpenAPI openAPI() {
+		
 		return new OpenAPI()
-				       .info(new Info().title("Testing Service API")
-						             .description("Handles All type of Request")
-						             .version("1.0.0")
-						             .contact(new Contact()
-								                      .name("Test_Company")
-								                      .email("dev@example.com")))
-				       .servers(List.of(new Server()
-						                        .url("http://localhost:" + serverPort)
-						                        .description("Local development server")));
+			       .info(new Info().title("Testing Service API")
+			                       .description("Handles All type of Request")
+			                       .version("1.0.0")
+			                       .contact(new Contact()
+				                                .name("Test_Company")
+				                                .email("dev@example.com")))
+			       .servers(List.of(new Server()
+				                        .url("http://localhost:" + serverPort)
+				                        .description("Local development server")));
 		// ── JWT security scheme ──────────────────────
 				       /*.addSecurityItem(new SecurityRequirement().addList(SECURITY_SCHEME_NAME))
 				       .components(new Components().addSecuritySchemes(SECURITY_SCHEME_NAME,
