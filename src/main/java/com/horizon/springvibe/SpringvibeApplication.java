@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 public class SpringvibeApplication {
 	
 	public static void main(String[] args) {
+		
 		SpringApplication.run(SpringvibeApplication.class, args);
 		System.out.println("***************************************************************");
 		System.out.println("*****************-------------------------*********************");
@@ -41,11 +42,11 @@ public class SpringvibeApplication {
 			
 			// updating a whole entity
 			var author = Author.builder()
-					             .firstName("Harry")
-					             .lastName("Potter")
-					             .age(33)
-					             .email("harry@email.com")
-					             .build();
+			                   .firstName("Harry")
+			                   .lastName("Potter")
+			                   .age(33)
+			                   .email("harry@email.com")
+			                   .build();
 //			authorRepository.save(author);
 			
 			// update certain field

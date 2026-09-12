@@ -21,19 +21,16 @@ public class AuthorController {
 	
 	@GetMapping
 	public List<Author> findAll() {
-		
 		return authorService.findAll();
 	}
 	
 	@GetMapping("/firstName")
 	public List<Author> findFirstName(String firstName) {
-		
 		return authorService.findAllByFirstName(firstName);
 	}
 	
 	@GetMapping("/{age}")
 	public int countByAgeGreaterThan(@PathVariable int age) {
-		
 		return authorService.countByAgeGreaterThan(age);
 	}
 	
